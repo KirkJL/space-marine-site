@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512"
+     height="512"
+     viewBox="0 0 512 512"
+     role="img"
+     aria-labelledby="title desc">
+
+  <title id="title">Project Space Marine</title>
+  <desc id="desc">Futuristic armoured helmet with amber visor and cyan tactical indicators.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#132a35"/>
+      <stop offset="100%" stop-color="#050b10"/>
+    </linearGradient>
+
+    <linearGradient id="armour" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#536d78"/>
+      <stop offset="45%" stop-color="#263d48"/>
+      <stop offset="100%" stop-color="#101e27"/>
+    </linearGradient>
+
+    <linearGradient id="visor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe09a"/>
+      <stop offset="45%" stop-color="#e8b65c"/>
+      <stop offset="100%" stop-color="#8b5b27"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#background)"/>
+
+  <!-- Outer HUD border -->
+  <rect x="25" y="25"
+        width="462" height="462"
+        rx="76"
+        fill="none"
+        stroke="#416a73"
+        stroke-width="5"/>
+
+  <!-- Tactical corner accents -->
+  <g fill="none" stroke="#e8b65c" stroke-width="8" stroke-linecap="square">
+    <path d="M77 150 V95 H150"/>
+    <path d="M362 95 H435 V150"/>
+    <path d="M77 362 V417 H150"/>
+    <path d="M362 417 H435 V362"/>
+  </g>
+
+  <!-- Helmet silhouette -->
+  <path d="
+    M137 167
+    Q151 98 256 84
+    Q361 98 375 167
+    L405 215
+    L386 339
+    L335 407
+    L177 407
+    L126 339
+    L107 215
+    Z"
+    fill="url(#armour)"
+    stroke="#6b8790"
+    stroke-width="9"
+    stroke-linejoin="round"/>
+
+  <!-- Helmet crown -->
+  <path d="
+    M173 155
+    Q191 111 256 108
+    Q321 111 339 155
+    L326 192
+    H186
+    Z"
+    fill="#344d58"
+    stroke="#78929b"
+    stroke-width="6"/>
+
+  <!-- Central armour ridge -->
+  <path d="
+    M256 109
+    L272 169
+    L256 205
+    L240 169
+    Z"
+    fill="#152b35"
+    stroke="#6c8790"
+    stroke-width="4"/>
+
+  <!-- Visor glow -->
+  <path d="
+    M146 205
+    L223 191
+    L256 216
+    L289 191
+    L366 205
+    L346 267
+    L284 275
+    L256 252
+    L228 275
+    L166 267
+    Z"
+    fill="#e8b65c"
+    opacity="0.35"
+    filter="url(#glow)"/>
+
+  <!-- Main visor -->
+  <path d="
+    M146 205
+    L223 191
+    L256 216
+    L289 191
+    L366 205
+    L346 267
+    L284 275
+    L256 252
+    L228 275
+    L166 267
+    Z"
+    fill="url(#visor)"
+    stroke="#ffd17c"
+    stroke-width="6"
+    stroke-linejoin="round"/>
+
+  <!-- Visor centre divider -->
+  <path d="M256 216 V252"
+        stroke="#6b471e"
+        stroke-width="7"/>
+
+  <!-- Visor reflections -->
+  <path d="M166 217 L221 206"
+        stroke="#fff1c6"
+        stroke-width="5"
+        opacity="0.65"/>
+
+  <path d="M291 206 L346 217"
+        stroke="#fff1c6"
+        stroke-width="5"
+        opacity="0.65"/>
+
+  <!-- Cheek armour -->
+  <path d="
+    M142 280
+    L215 294
+    L228 350
+    L177 374
+    L147 330
+    Z"
+    fill="#263e49"
+    stroke="#6c8790"
+    stroke-width="6"/>
+
+  <path d="
+    M370 280
+    L297 294
+    L284 350
+    L335 374
+    L365 330
+    Z"
+    fill="#263e49"
+    stroke="#6c8790"
+    stroke-width="6"/>
+
+  <!-- Respirator -->
+  <path d="
+    M229 290
+    H283
+    L302 351
+    L279 385
+    H233
+    L210 351
+    Z"
+    fill="#0a1820"
+    stroke="#78929b"
+    stroke-width="7"
+    stroke-linejoin="round"/>
+
+  <!-- Respirator vents -->
+  <g stroke="#5ac5d8" stroke-width="6" stroke-linecap="round">
+    <path d="M233 323 H279"/>
+    <path d="M239 343 H273"/>
+    <path d="M245 363 H267"/>
+  </g>
+
+  <!-- Side armour bolts -->
+  <g fill="#e8b65c">
+    <circle cx="153" cy="300" r="7"/>
+    <circle cx="359" cy="300" r="7"/>
+  </g>
+
+  <!-- Cyan status lights -->
+  <g fill="#5ac5d8">
+    <circle cx="121" cy="231" r="7"/>
+    <circle cx="391" cy="231" r="7"/>
+  </g>
+
+  <!-- Bottom designation -->
+  <text x="256"
+        y="456"
+        text-anchor="middle"
+        fill="#e8b65c"
+        font-family="Arial, sans-serif"
+        font-size="24"
+        font-weight="900"
+        letter-spacing="6">
+    MK-I
+  </text>
+
+</svg>
