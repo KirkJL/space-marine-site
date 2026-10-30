@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080f14"
+    >
+
+    <meta
+        name="description"
+        content="Project Space Marine — Personal fitness command centre. Track training, progressive overload, nutrition and muscle recovery."
+    >
+
+    <meta
+        name="application-name"
+        content="Project Space Marine"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <title>Project Space Marine | Fitness Command Centre</title>
+
+    <!-- PWA Manifest -->
+    <link
+        rel="manifest"
+        href="./manifest.webmanifest"
+    >
+
+    <!-- Application Icon -->
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="./assets/icon.svg"
+    >
+
+    <!-- Main Stylesheet -->
+    <link
+        rel="stylesheet"
+        href="./styles.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         VISOR OVERLAY
+    ====================================================== -->
+
+    <div class="visor-overlay" aria-hidden="true">
+
+        <div class="visor-top"></div>
+
+        <div class="visor-bottom"></div>
+
+        <div class="visor-left"></div>
+
+        <div class="visor-right"></div>
+
+        <div class="visor-scanlines"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+    ====================================================== -->
+
+    <div class="app-shell">
+
+        <!-- ================================================
+             TOP SYSTEM BAR
+        ================================================= -->
+
+        <header class="system-header">
+
+            <div class="brand">
+
+                <div class="brand-icon" aria-hidden="true">
+                    <span>✦</span>
+                </div>
+
+                <div class="brand-text">
+
+                    <div class="brand-overline">
+                        PERSONAL AUGMENTATION SYSTEM
+                    </div>
+
+                    <h1>
+                        PROJECT
+                        <span>SPACE MARINE</span>
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="system-status">
+
+                <div class="status-indicator">
+
+                    <span class="status-dot"></span>
+
+                    <span class="status-label">
+                        SYSTEM ONLINE
+                    </span>
+
+                </div>
+
+                <div class="system-clock">
+
+                    <span class="clock-label">
+                        LOCAL TIME
+                    </span>
+
+                    <strong id="clock">
+                        --:--
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================================================
+             HUD INFORMATION STRIP
+        ================================================= -->
+
+        <div class="hud-strip">
+
+            <div class="hud-strip-item">
+
+                <span class="hud-label">
+                    SYSTEM
+                </span>
+
+                <strong>
+                    MK.I VISOR
+                </strong>
+
+            </div>
+
+            <div class="hud-strip-item">
+
+                <span class="hud-label">
+                    OPERATION
+                </span>
+
+                <strong>
+                    PHYSICAL TRANSFORMATION
+                </strong>
+
+            </div>
+
+            <div class="hud-strip-item">
+
+                <span class="hud-label">
+                    PROTOCOL
+                </span>
+
+                <strong>
+                    PROGRESSIVE OVERLOAD
+                </strong>
+
+            </div>
+
+            <div class="hud-strip-item">
+
+                <span class="hud-label">
+                    STATUS
+                </span>
+
+                <strong class="online-text">
+                    ACTIVE
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================
+             MAIN APPLICATION LAYOUT
+        ================================================= -->
+
+        <div class="app-layout">
+
+            <!-- ============================================
+                 DESKTOP NAVIGATION
+            ============================================= -->
+
+            <aside class="sidebar">
+
+                <div class="sidebar-heading">
+                    SYSTEM MODULES
+                </div>
+
+                <nav
+                    class="main-navigation"
+                    aria-label="Main navigation"
+                >
+
+                    <button
+                        type="button"
+                        class="nav-item active"
+                        data-view="dashboard"
+                    >
+
+                        <span class="nav-icon" aria-hidden="true">
+                            ⌖
+                        </span>
+
+                        <span class="nav-text">
+                            Command Centre
+                        </span>
+
+                        <span class="nav-code">
+                            01
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-item"
+                        data-view="training"
+                    >
+
+                        <span class="nav-icon" aria-hidden="true">
+                            ⚔
+                        </span>
+
+                        <span class="nav-text">
+                            Training
+                        </span>
+
+                        <span class="nav-code">
+                            02
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-item"
+                        data-view="recovery"
+                    >
+
+                        <span class="nav-icon" aria-hidden="true">
+                            ◈
+                        </span>
+
+                        <span class="nav-text">
+                            Body Scanner
+                        </span>
+
+                        <span class="nav-code">
+                            03
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-item"
+                        data-view="nutrition"
+                    >
+
+                        <span class="nav-icon" aria-hidden="true">
+                            ◉
+                        </span>
+
+                        <span class="nav-text">
+                            Nutrition
+                        </span>
+
+                        <span class="nav-code">
+                            04
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-item"
+                        data-view="history"
+                    >
+
+                        <span class="nav-icon" aria-hidden="true">
+                            ▥
+                        </span>
+
+                        <span class="nav-text">
+                            Mission History
+                        </span>
+
+                        <span class="nav-code">
+                            05
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-item"
+                        data-view="settings"
+                    >
+
+                        <span class="nav-icon" aria-hidden="true">
+                            ⚙
+                        </span>
+
+                        <span class="nav-text">
+                            System Settings
+                        </span>
+
+                        <span class="nav-code">
+                            06
+                        </span>
+
+                    </button>
+
+                </nav>
+
+
+                <!-- Sidebar Status -->
+
+                <div class="sidebar-footer">
+
+                    <div class="sidebar-status-title">
+                        OPERATIONAL STATUS
+                    </div>
+
+                    <div class="sidebar-status-value">
+
+                        <span class="status-dot"></span>
+
+                        READY FOR DEPLOYMENT
+
+                    </div>
+
+                    <p>
+                        DISCIPLINE // CONSISTENCY // PROGRESSION
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ============================================
+                 MAIN CONTENT AREA
+            ============================================= -->
+
+            <main
+                id="main"
+                class="main-content"
+                tabindex="-1"
+            >
+
+                <!-- Initial loading state -->
+
+                <div class="loading-state">
+
+                    <div class="loading-reticle">
+                        <div class="reticle-inner"></div>
+                    </div>
+
+                    <div class="loading-title">
+                        INITIALISING VISOR
+                    </div>
+
+                    <div class="loading-subtitle">
+                        Loading mission telemetry...
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+
+        <!-- ================================================
+             FOOTER
+        ================================================= -->
+
+        <footer class="system-footer">
+
+            <div>
+                PROJECT SPACE MARINE
+                <span class="footer-divider">//</span>
+                MK.I FITNESS SYSTEM
+            </div>
+
+            <div>
+                STRENGTH IS EARNED
+                <span class="footer-divider">//</span>
+                NOT ASSIGNED
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE NAVIGATION
+    ====================================================== -->
+
+    <nav
+        class="mobile-navigation"
+        aria-label="Mobile navigation"
+    >
+
+        <button
+            type="button"
+            class="mobile-nav-item active"
+            data-view="dashboard"
+            aria-label="Dashboard"
+        >
+
+            <span class="mobile-nav-icon" aria-hidden="true">
+                ⌖
+            </span>
+
+            <span class="mobile-nav-label">
+                HOME
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mobile-nav-item"
+            data-view="training"
+            aria-label="Training"
+        >
+
+            <span class="mobile-nav-icon" aria-hidden="true">
+                ⚔
+            </span>
+
+            <span class="mobile-nav-label">
+                TRAIN
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mobile-nav-item"
+            data-view="recovery"
+            aria-label="Recovery scanner"
+        >
+
+            <span class="mobile-nav-icon" aria-hidden="true">
+                ◈
+            </span>
+
+            <span class="mobile-nav-label">
+                SCAN
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mobile-nav-item"
+            data-view="nutrition"
+            aria-label="Nutrition"
+        >
+
+            <span class="mobile-nav-icon" aria-hidden="true">
+                ◉
+            </span>
+
+            <span class="mobile-nav-label">
+                FUEL
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mobile-nav-item"
+            data-view="history"
+            aria-label="History"
+        >
+
+            <span class="mobile-nav-icon" aria-hidden="true">
+                ▥
+            </span>
+
+            <span class="mobile-nav-label">
+                LOGS
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mobile-nav-item"
+            data-view="settings"
+            aria-label="Settings"
+        >
+
+            <span class="mobile-nav-icon" aria-hidden="true">
+                ⚙
+            </span>
+
+            <span class="mobile-nav-label">
+                SYSTEM
+            </span>
+
+        </button>
+
+    </nav>
+
+
+    <!-- =====================================================
+         TOAST NOTIFICATIONS
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+        style="display:none"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./app.js" defer></script>
+
+</body>
+</html>
