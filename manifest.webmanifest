@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Project Space Marine",
+  "short_name": "Space Marine",
+  "description": "Your personal fitness command centre. Track workouts, progressive overload, muscle recovery, nutrition and daily performance.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#050b10",
+  "theme_color": "#080f14",
+  "lang": "en-GB",
+  "categories": [
+    "health",
+    "fitness",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
